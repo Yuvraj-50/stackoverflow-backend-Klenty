@@ -5,7 +5,7 @@ function connectDb() {
   const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
   const MONGO_DB_URL = process.env.MONGO_DB_URL;
 
-  mongoose.set("strictQuery", false);
+  mongoose.set("strictQuery", true);
 
   mongoose
     .connect(

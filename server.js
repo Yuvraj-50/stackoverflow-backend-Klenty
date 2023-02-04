@@ -4,7 +4,6 @@ const connectDb = require("./config/db");
 require("dotenv").config();
 
 const isAuthenticated = require("./middlewares/auth");
-
 const userRoute = require("./routes/userRoute");
 const isVerifyRoute = require("./routes/isVerify");
 const questionRoute = require("./routes/questionRoute");
@@ -12,9 +11,9 @@ const answerRoute = require("./routes/answerRoute");
 const commentRoute = require("./routes/commentRoute");
 const searchRoute = require("./routes/serachRoute");
 
-const app = express();
+const PORT = process.env.PORT || 4000;
 
-const PORT = process.env.PORT || 4331;
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -27,11 +26,11 @@ app.use("/api/v1/answer", isAuthenticated, answerRoute);
 app.use("/api/v1/comment", isAuthenticated, commentRoute);
 app.use("/api/v1/search", isAuthenticated, searchRoute);
 
+app.use("/", (req, res) => {
+  return res.send("welcome to the application");
+});
+
 connectDb();
-app.listen(PORT, (e) => {
-  if (e) {
-    console.log(e.message);
-  } else {
-    console.log(`server is running port ${PORT}`);
-  }
+app.listen(PORT, () => {
+  console.log("server is running port 4000");
 });
