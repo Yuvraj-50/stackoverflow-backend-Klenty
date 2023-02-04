@@ -11,7 +11,7 @@ const answerRoute = require("./routes/answerRoute");
 const commentRoute = require("./routes/commentRoute");
 const searchRoute = require("./routes/serachRoute");
 
-const PORT = `0.0.0.0:$PORT`;
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
