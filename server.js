@@ -28,6 +28,10 @@ app.use("/api/v1/comment", isAuthenticated, commentRoute);
 app.use("/api/v1/search", isAuthenticated, searchRoute);
 
 connectDb();
-app.listen(PORT, () => {
-  console.log("server is running port 4000");
+app.listen(PORT, (e) => {
+  if (e) {
+    console.log(e.message);
+  } else {
+    console.log("server is running port 4000");
+  }
 });
