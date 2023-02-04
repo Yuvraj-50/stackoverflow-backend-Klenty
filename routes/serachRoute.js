@@ -23,7 +23,7 @@ router.get("/:value", async (req, res) => {
               $project: {
                 _id: 1,
                 comment: 1,
-                created_at: 1,
+                createdAt: 1,
               },
             },
           ],
@@ -58,7 +58,7 @@ router.get("/:value", async (req, res) => {
         },
       },
       {
-        $sort: { created_at: -1 },
+        $sort: { createdAt: -1 },
       },
     ]).exec();
     const data = allQuestionData.filter((data) => {

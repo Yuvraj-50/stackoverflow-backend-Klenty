@@ -43,7 +43,7 @@ const getAllQuestions = async (req, res) => {
               $project: {
                 _id: 1,
                 comment: 1,
-                created_at: 1,
+                createdAt: 1,
               },
             },
           ],
@@ -71,13 +71,13 @@ const getAllQuestions = async (req, res) => {
           as: "answerDetails",
         },
       },
+      // {
+      //   $project: {
+      //     __v: 0,
+      //   },
+      // },
       {
-        $project: {
-          __v: 0,
-        },
-      },
-      {
-        $sort: { created_at: -1 },
+        $sort: { createdAt: -1 },
       },
     ]).exec();
 
@@ -112,7 +112,7 @@ const getSingleQuestion = async (req, res) => {
                 user: 1,
                 answer: 1,
                 question_id: 1,
-                created_at: 1,
+                createdAt: 1,
               },
             },
           ],
@@ -137,7 +137,7 @@ const getSingleQuestion = async (req, res) => {
                 question_id: 1,
                 user: 1,
                 comment: 1,
-                created_at: 1,
+                createdAt: 1,
               },
             },
           ],
