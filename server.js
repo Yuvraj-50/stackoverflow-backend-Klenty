@@ -14,7 +14,7 @@ const searchRoute = require("./routes/serachRoute");
 
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4331;
 
 app.use(cors());
 app.use(express.json());
@@ -32,6 +32,6 @@ app.listen(PORT, (e) => {
   if (e) {
     console.log(e.message);
   } else {
-    console.log("server is running port 4000");
+    console.log(`server is running port ${PORT}`);
   }
 });
