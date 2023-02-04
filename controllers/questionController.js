@@ -1,5 +1,5 @@
 const { default: mongoose } = require("mongoose");
-const QuestionModel = require("../Models/QuestionModel");
+const QuestionModel = require("../Models/questionModel.js");
 
 const addQuestion = async (req, res) => {
   try {
