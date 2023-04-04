@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDb = require("./config/db");
+const cors = require("cors");
 require("dotenv").config();
 
 const isAuthenticated = require("./middlewares/auth");
